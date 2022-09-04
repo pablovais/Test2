@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "da767a42-ad38-4977-b492-cafe0384d1cf",
+		"name": "Public REST APIs",
+		"description": "This is a collection of different REST APIs that are completley public and do not require any authentication, making it easier for consumers to play with and understand what APIs are all about by seeing the many different ways in which APIs can be used.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16022569"
+	},
+	"item": [
+		{
+			"name": "Animals",
+			"item": [
+				{
+					"name": "Dog Breeds",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var data = pm.response.json();\r",
+									"pm.environment.set(\"status\", data.status);\r",
+									"pm.environment.set(\"terrier\", data.message.terrier[0]);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dog.ceo/api/breeds/list/all",
+							"protocol": "https",
+							"host": [
+								"dog",
+								"ceo"
+							],
+							"path": [
+								"api",
+								"breeds",
+								"list",
+								"all"
+							]
+						},
+						"description": "List all dog breeds.\n\nURL - https://dog.ceo/dog-api/documentation/"
+					},
+					"response": []
+				},
+				{
+					"name": "Pet Food Facts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://world.openpetfoodfacts.org/api/v0/product/20106836.json",
+							"protocol": "https",
+							"host": [
+								"world",
+								"openpetfoodfacts",
+								"org"
+							],
+							"path": [
+								"api",
+								"v0",
+								"product",
+								"20106836.json"
+							]
+						},
+						"description": "Returns facts on pet food using barcode."
+					},
+					"response": []
+				},
+				{
+					"name": "ALL CAPS AS A SERVICE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"INPUT\": \"wow world\"\n}"
+						},
+						"url": {
+							"raw": "HTTP://API.SHOUTCLOUD.IO/V1/SHOUT",
+							"protocol": "HTTP",
+							"host": [
+								"API",
+								"SHOUTCLOUD",
+								"IO"
+							],
+							"path": [
+								"V1",
+								"SHOUT"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "These are public API endpoints for animals.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
